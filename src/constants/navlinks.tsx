@@ -1,35 +1,41 @@
 import {
-  IconArticle,
-  IconBolt,
-  IconBriefcase2,
+  IconHome,
+  IconUser,
+  IconCode,
+  IconStar,
+  IconBriefcase,
   IconMail,
-  IconMessage2,
 } from "@tabler/icons-react";
 
 export const navlinks = [
   {
     href: "/",
     label: "Home",
-    icon: IconBolt,
+    icon: IconHome, // Home icon
   },
   {
     href: "/about",
     label: "About",
-    icon: IconMessage2,
+    icon: IconUser, // About icon
   },
   {
     href: "/projects",
     label: "Projects",
-    icon: IconBriefcase2,
+    icon: IconCode, // Projects icon
   },
   {
-    href: "/blog",
-    label: "Articles",
-    icon: IconArticle,
+    href: "/events",
+    label: "Events",
+    icon: IconStar, // Updated to IconStar for Skills page
+  },
+  {
+    href: "/experience",
+    label: "Experience",
+    icon: IconBriefcase, // Experience icon
   },
   {
     href: "/contact",
     label: "Contact",
-    icon: IconMail,
+    icon: IconMail, // Contact icon
   },
 ];

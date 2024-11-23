@@ -1,23 +1,35 @@
 import {
   IconBrandLinkedin,
   IconBrandTwitter,
-  IconBrandYoutube,
+  IconBrandGithub,
+  IconMail,
+  IconBrandTelegram,
 } from "@tabler/icons-react";
 
 export const socials = [
   {
-    href: "https://twitter.com/mannupaaji",
+    href: "https://x.com/mulinyafadhil",
     label: "Twitter",
     icon: IconBrandTwitter,
   },
   {
-    href: "https://linkedin.com/in/manuarora28",
+    href: "https://www.linkedin.com/in/fadhil-mulinya-35464b238/",
     label: "LinkedIn",
     icon: IconBrandLinkedin,
   },
   {
-    href: "https://youtube.com/maninthere",
-    label: "YouTube",
-    icon: IconBrandYoutube,
+    href: "https://github.com/FadhilMulinya",
+    label: "Github",
+    icon: IconBrandGithub,
+  },
+  {
+    href: "https://t.me/fadhil_dev",
+    label: "Telegram",
+    icon: IconBrandTelegram,
+  },
+  {
+    href: "mailto:mulinyafadhil@gmail.com", // Use "mailto" for email links
+    label: "Email",
+    icon: IconMail,
   },
 ];

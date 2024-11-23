@@ -1,22 +1,19 @@
 import { Container } from "@/components/Container";
-import { Heading } from "@/components/Heading";
-import { Highlight } from "@/components/Highlight";
-import { Paragraph } from "@/components/Paragraph";
 import { SingleProduct } from "@/components/Product";
-import { Products } from "@/components/Products";
 import { products } from "@/constants/products";
 import { Product } from "@/types/products";
 import { Metadata } from "next";
-import Image from "next/image";
 import { redirect } from "next/navigation";
 
 type Props = {
   params: { slug: string };
 };
 
+// Add metadata generation logic
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
-  const product = products.find((p) => p.slug === slug) as Product | undefined;
+  const product = products.find((p) => p.slug === slug);
+
   if (product) {
     return {
       title: product.title,
@@ -25,23 +22,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } else {
     return {
       title: "Projects | John Doe",
-      description:
-        "John Doe is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
+      description: "Explore the projects by John Doe in blockchain and Web3.",
     };
   }
 }
 
-export default function SingleProjectPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+// Render the SingleProduct page
+export default function SingleProjectPage({ params }: Props) {
   const slug = params.slug;
   const product = products.find((p) => p.slug === slug);
 
   if (!product) {
     redirect("/projects");
+    return null; // Avoid further rendering
   }
+
   return (
     <Container>
       <SingleProduct product={product} />

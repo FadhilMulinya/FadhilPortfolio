@@ -68,12 +68,17 @@ export const Navigation = ({
             isActive(link.href) && "bg-gray-800 text-white"
           )}
         >
-          <link.icon
-            className={twMerge(
-              "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-white"
-            )}
-          />
+          {/* Render the icon as a component */}
+          {link.icon && React.isValidElement(link.icon) ? (
+            React.cloneElement(link.icon as React.ReactElement, {
+              className: twMerge(
+                "h-4 w-4 flex-shrink-0",
+                isActive(link.href) && "text-white"
+              ),
+            })
+          ) : (
+            <span className="h-4 w-4 flex-shrink-0" />
+          )}
           <span>{link.label}</span>
         </Link>
       ))}
@@ -87,7 +92,13 @@ export const Navigation = ({
           href={link.href}
           className="text-gray-300 hover:text-white transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
         >
-          <link.icon className="h-4 w-4 flex-shrink-0" />
+          {link.icon && React.isValidElement(link.icon) ? (
+            React.cloneElement(link.icon as React.ReactElement, {
+              className: "h-4 w-4 flex-shrink-0",
+            })
+          ) : (
+            <span className="h-4 w-4 flex-shrink-0" />
+          )}
           <span>{link.label}</span>
         </Link>
       ))}
@@ -106,10 +117,9 @@ const SidebarHeader = () => {
         className="rounded-full"
       />
       <div className="flex flex-col">
-        <p className="font-semibold text-white">John Doe</p>
+        <p className="font-semibold text-white">Fadhil Mulinya</p>
         <p className="text-sm text-gray-400">Developer</p>
       </div>
     </div>
   );
 };
-

@@ -4,13 +4,13 @@ import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
 import { Products } from "@/components/Products";
 import { getAllBlogs } from "../../../lib/getAllBlogs";
-import { Blogs } from "@/components/Blogs";
+import { Events } from "@/components/Blogs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blogs | John Doe",
+  title: "Blogs | Fadhil Mulinya",
   description:
-    "John Doe is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
+    "Fadhil Mulinya is a blockchain developer, events organizer, community builder and proffesional speaker.",
 };
 
 export default async function Blog() {
@@ -25,7 +25,7 @@ export default async function Blog() {
         Ever since <Highlight> I was a kid</Highlight>, I&apos;ve been
         fascinated by technology.
       </Paragraph>
-      <Blogs blogs={data} />
+      <Events events={data} />
     </Container>
   );
 }

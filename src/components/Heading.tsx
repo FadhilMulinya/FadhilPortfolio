@@ -1,23 +1,26 @@
-import React from "react";
-
+import React, { ReactNode, ElementType } from "react";
 import localFont from "next/font/local";
 import { twMerge } from "tailwind-merge";
 
-// Font files can be colocated inside of `app`
+// Load the custom font
 const CalSans = localFont({
   src: [{ path: "../../fonts/CalSans-SemiBold.woff2" }],
   display: "swap",
 });
 
-export const Heading = ({
-  className,
-  children,
-  as: Tag = "h1",
-}: {
+type HeadingProps<T extends ElementType> = {
   className?: string;
-  children: React.ReactNode;
-  as?: keyof JSX.IntrinsicElements;
-}) => {
+  children: ReactNode;
+  as?: T;
+};
+
+export const Heading = <T extends ElementType = 'h1'>({ 
+  className, 
+  children, 
+  as 
+}: HeadingProps<T>) => {
+  const Tag = as || 'h1';
+
   return (
     <Tag
       className={twMerge(
@@ -30,3 +33,4 @@ export const Heading = ({
     </Tag>
   );
 };
+
