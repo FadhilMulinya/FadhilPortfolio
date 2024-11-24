@@ -5,5 +5,8 @@
 - Tailwindcss
 - Framer motion
 - MDX
+- emailjs
+- vercel
+
 
 
