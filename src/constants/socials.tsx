@@ -28,7 +28,7 @@ export const socials = [
     icon: IconBrandTelegram,
   },
   {
-    href: "mailto:mulinyafadhil@gmail.com", // Use "mailto" for email links
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=mulinyafadhil@gmail.com", 
     label: "Email",
     icon: IconMail,
   },
